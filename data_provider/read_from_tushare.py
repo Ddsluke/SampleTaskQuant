@@ -1,16 +1,16 @@
 # 导入tushare
+import time
 import tushare as ts
 
 class TushareReader():
-    def __init__(self, *args, **kwargs):
+    def __init__(self, cfg, fields=None):
         # 初始化pro接口
         self.pro = ts.pro_api('5d12fd005a33f96b664b0a393e72288545d2dfd6723be471c0bdb47f')
-        self.args = args
-        self.kwargs = kwargs
-        print(args, kwargs)
+        self.cfg = cfg
+        self.fields = fields
 
     def pull(self):
-        df = self.pro.daily(*self.args, **self.kwargs)
+        df = self.pro.daily(**self.cfg, fields=fields)
         return df
 
 if __name__ == "__main__":
@@ -38,4 +38,4 @@ if __name__ == "__main__":
         ]
     
     reader = TushareReader(cfg, fields=fields)
-    reader.pull()
+    print(reader.pull())
