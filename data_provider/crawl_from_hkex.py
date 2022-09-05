@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 # from bs4 import BeautifulSoup
 
 
-class Crawler_HKEX(object):
+class HKEXReader(object):
     def __init__(self, date, connect_type, debug=False):
         if not debug:
             self.options = webdriver.ChromeOptions()
@@ -80,5 +80,5 @@ class Crawler_HKEX(object):
 
 # Sample execution
 if __name__ == "__main__":
-    crawler = Crawler_HKEX("20220904", "Shanghai Connect Southbound")
+    crawler = HKEXReader("20220904", "Shanghai Connect Southbound")
     print(crawler.run())

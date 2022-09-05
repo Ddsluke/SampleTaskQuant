@@ -8,7 +8,7 @@ class TushareReader():
         self.cfg = cfg
         self.fields = fields
 
-    def pull(self):
+    def run(self):
         df = self.pro.daily(**self.cfg, fields=fields)
         return df
 
@@ -40,4 +40,4 @@ if __name__ == "__main__":
         ]
     
     reader = TushareReader(cfg, fields=fields)
-    print(reader.pull())
+    print(reader.run())
