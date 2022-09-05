@@ -1,5 +1,4 @@
 # 导入tushare
-import time
 import tushare as ts
 
 class TushareReader():
@@ -14,10 +13,13 @@ class TushareReader():
         return df
 
 if __name__ == "__main__":
+    import datetime
+    today = datetime.date.today().strftime(r'%Y%m%d')
+    past = int(today) - 50000
     cfg = {
-        "ts_code": "",
+        "ts_code": "000001.SZ", # sample ts code
         "trade_date": "",
-        "start_date": 20170904, # past 5 years
+        "start_date": past, # past 5 years
         "end_date": "",
         "offset": "",
         "limit": ""
