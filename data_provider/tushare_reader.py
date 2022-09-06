@@ -9,7 +9,7 @@ class TushareReader():
         self.fields = fields
 
     def run(self):
-        df = self.pro.daily(**self.cfg, fields=fields)
+        df = self.pro.daily(**self.cfg, fields=self.fields)
         return df
 
 if __name__ == "__main__":
