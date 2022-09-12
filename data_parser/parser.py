@@ -45,12 +45,13 @@ if __name__ == "__main__":
 
     reader = TushareReader(cfg, fields=fields) 
     res_df = reader.run()
+    date = "20220902"
 
     parser.save_table(res_df, 'sample_tushare_data')
 
-    reader = HKEXReader("20220904", "Shanghai Connect Southbound")
+    reader = HKEXReader(date, "Shanghai Connect Southbound")
     res_df = reader.run()
-    res_df.insert(0, 'Date', "20220904")
+    res_df.insert(0, 'Date', date)
     res_df.insert(res_df.shape[1], 'Connect', 'Shanghai_Connect_Southbound')
 
     parser.save_table(res_df, 'sample_hkex_data')
