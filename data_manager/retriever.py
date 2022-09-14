@@ -13,7 +13,7 @@ class Retriever(object):
         self.metadata = db.MetaData()
 
     @property
-    def _current_date():
+    def _current_date(self):
         today = datetime.date.today().strftime(r'%Y%m%d')
         return str(today)
 
