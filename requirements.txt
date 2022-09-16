@@ -1,5 +1,10 @@
 pyyaml
+numpy
 selenium
 tushare
 sqlalchemy
 mariadb
+matplotlib
+seaborn
+pandas
+scipy
